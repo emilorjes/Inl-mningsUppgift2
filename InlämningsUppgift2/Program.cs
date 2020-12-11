@@ -6,7 +6,7 @@ namespace InlämningsUppgift2
     {
         static void Main(string[] args)
         {
-            
+            Methods.StartProgram();
         }
     }
 }

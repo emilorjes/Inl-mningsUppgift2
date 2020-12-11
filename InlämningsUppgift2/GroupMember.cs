@@ -70,7 +70,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Dennis
         //--------------------------------------------------------
-        public static GroupMember Dennis = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Dennis = new GroupMember() 
         {
             Name = "Dennis Lindquist",
             HomeTown = "Älvdalen",
@@ -92,7 +92,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Emil
         //--------------------------------------------------------
-        public static GroupMember Emil = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Emil = new GroupMember() 
         {
             Name = "Emil Örjes",
             HomeTown = "Falun",
@@ -114,7 +114,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Fredrik
         //--------------------------------------------------------
-        public static GroupMember Fredrik = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Fredrik = new GroupMember() 
         {
             Name = "Fredrik Hoffman",
             HomeTown = "Östersund / Odensala",
@@ -136,7 +136,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Håkan
         //--------------------------------------------------------
-        public static GroupMember Håkan = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Håkan = new GroupMember() 
         {
             Name = "Håkan Eriksson",
             HomeTown = "Uppsala",
@@ -158,7 +158,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Josefine
         //--------------------------------------------------------
-        public static GroupMember Josefine = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Josefine = new GroupMember() 
         {
             Name = "Josefine Rönnqvist",
             HomeTown = "Gideå",
@@ -180,7 +180,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Mattias
         //--------------------------------------------------------
-        public static GroupMember Mattias = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Mattias = new GroupMember() 
         {
             Name = "Mattias Vikström",
             HomeTown = "Umeå",
@@ -202,7 +202,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Nicklas
         //--------------------------------------------------------
-        public static GroupMember Nicklas = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Nicklas = new GroupMember() 
         {
             Name = "Nicklas Eriksson",
             HomeTown = "Umeå",
@@ -224,7 +224,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Tina
         //--------------------------------------------------------
-        public static GroupMember Tina = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Tina = new GroupMember() 
         {
             Name = "Tina Eriksson",
             HomeTown = "Östersund/Brunflo",
@@ -246,7 +246,7 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------
         // Tobias
         //--------------------------------------------------------
-        public static GroupMember Tobias = new GroupMember() // static för att komma åt object Emil
+        public static GroupMember Tobias = new GroupMember() 
         {
             Name = "Tobias Binett",
             HomeTown = "Hudiksvall",
