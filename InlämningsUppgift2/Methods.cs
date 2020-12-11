@@ -7,7 +7,7 @@ namespace InlämningsUppgift2
     class Methods
     {
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // En publik lista som innehåller objekt med specifik information om varje person.
         //--------------------------------------------------------------------------------------------------------------------------
         public static List<GroupMember> memberList = new List<GroupMember>() { GroupMember.Benny, GroupMember.Dennis, GroupMember.Emil, GroupMember.Fredrik, GroupMember.Håkan, GroupMember.Josefine, GroupMember.Mattias, GroupMember.Nicklas, GroupMember.Tina, GroupMember.Tobias };
 
@@ -15,7 +15,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // När denna metod kallas på i Program.cs körs programmet igång från start.
         //--------------------------------------------------------------------------------------------------------------------------
         public static void StartProgram()
         {
@@ -27,7 +27,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Änvändaren får mata in ett lösenord och "Skriv in lösenord" loopar tills användaren skrivit in rätt.
         //--------------------------------------------------------------------------------------------------------------------------
         static void LoginCode()
         {
@@ -59,14 +59,17 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // StartMenu och menyvalen loopar om användaren skriver fel ("TryParse"). I menyval 1 och 2 kan "b" användas för att backa.
+        //--------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------
+        // Menyn har 4 olika alternativ. Beroende vilkent alternativ som väljs anropas en specifik metod. 
         //--------------------------------------------------------------------------------------------------------------------------
         static void StartMenu()
         {
             bool keepMenuGo = true;
             string menuChoiceString;
 
-            Console.WriteLine("Snyggt rätt kod!\n"); // Använd backslash istället för consol.writeline 
+            Console.WriteLine("Snyggt rätt kod!\n"); 
 
             do
             {
@@ -110,7 +113,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // En numrerad lista med namn skrivs ut. Beroenda på vilken siffra som välj skrivs specific information om den personen ut.
         //--------------------------------------------------------------------------------------------------------------------------
         static void MembersMenu(List<GroupMember> memberList)
         {
@@ -179,7 +182,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Tar bort en person från listan memberList och listan uppdateras i alla menyval.
         //--------------------------------------------------------------------------------------------------------------------------
         static void DeleteMember()
         {
@@ -217,7 +220,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Skriver ut all information om varje person samtidgt.
         //--------------------------------------------------------------------------------------------------------------------------
         public static List<GroupMember> PrintAllMembers()
         {
@@ -236,7 +239,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Stänger ner programmet.
         //--------------------------------------------------------------------------------------------------------------------------
         static void Exit()
         {
@@ -248,7 +251,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Skriver ut ett rött felmeddelnade vid nmetodanrop.
         //--------------------------------------------------------------------------------------------------------------------------
         private static void ErrorMessage() 
         {
@@ -262,7 +265,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Skriver ut en numrerad lista av objektens namn från memberList.
         //--------------------------------------------------------------------------------------------------------------------------
         private static void PrintNumberdListWithName(List<GroupMember> memberList)
         {
@@ -278,7 +281,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // Beroende på vilken person som ligger på specifikt index skrivs information om den personen ut när metoden anropas.
         //--------------------------------------------------------------------------------------------------------------------------
         static void ShowIndexZeroOfMemberList()
         {
@@ -335,7 +338,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //
+        // En mall över hur information om personerna skrivs ut med färgmönster när metodanrop av denna metod sker.
         //--------------------------------------------------------------------------------------------------------------------------
         public static void PrintMemberInfo(GroupMember groupMember)
         {
