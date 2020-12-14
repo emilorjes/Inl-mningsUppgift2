@@ -4,10 +4,10 @@ using System.Text;
 
 namespace InlämningsUppgift2
 {
-    class Group
+    class Group // C.
     {
         //----------------------------------------
-        // Fields (string)
+        // 1C. Fields (string)
         //----------------------------------------
         private string name;
         private string homeTown;
@@ -22,7 +22,7 @@ namespace InlämningsUppgift2
 
 
         //----------------------------------------
-        // Fields (int)
+        // 2C. Fields (int)
         //----------------------------------------
         private int age;
         private int height;
@@ -33,7 +33,7 @@ namespace InlämningsUppgift2
 
 
         //----------------------------------------
-        // Property (string)
+        // 3C. Property (string)
         //----------------------------------------
 
         public string Name
@@ -81,7 +81,7 @@ namespace InlämningsUppgift2
 
 
         //----------------------------------------
-        // Property (int)                                
+        // 4C. Property (int)                                
         //----------------------------------------
         public int Age
         {

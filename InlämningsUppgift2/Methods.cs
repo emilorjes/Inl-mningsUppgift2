@@ -4,34 +4,34 @@ using System.Text;
 
 namespace InlämningsUppgift2
 {
-    class Methods
+    class Methods // B.
     {
         //--------------------------------------------------------------------------------------------------------------------------
-        // En publik lista som innehåller objekt med specifik information om varje person.
+        // B1. En publik lista som innehåller objekt med specifik information om varje person.
         //--------------------------------------------------------------------------------------------------------------------------
-        public static List<GroupMember> memberList = new List<GroupMember>() { GroupMember.Benny, GroupMember.Dennis, GroupMember.Emil, GroupMember.Fredrik, GroupMember.Håkan, GroupMember.Josefine, GroupMember.Mattias, GroupMember.Nicklas, GroupMember.Tina, GroupMember.Tobias };
+        public static List<GroupMember> groupMemberList = new List<GroupMember>() { GroupMember.Benny, GroupMember.Dennis, GroupMember.Emil, GroupMember.Fredrik, GroupMember.Håkan, GroupMember.Josefine, GroupMember.Mattias, GroupMember.Nicklas, GroupMember.Tina, GroupMember.Tobias };
 
 
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // När denna metod kallas på i Program.cs körs programmet igång från start.
+        // B2. När denna metod kallas på i Program.cs körs programmet igång från start.
         //--------------------------------------------------------------------------------------------------------------------------
         public static void StartProgram()
         {
-            LoginCode();
-            StartMenu();
+            LoginCode(); // B3. Rad 29
+            StartMenu(); // B4. Rad 61
         }
 
 
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Änvändaren får mata in ett lösenord och "Skriv in lösenord" loopar tills användaren skrivit in rätt.
+        // B3. Änvändaren får mata in ett lösenord och "Skriv in lösenord" loopar tills användaren skrivit in rätt.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void LoginCode()
+        private static void LoginCode()
         {
-            List<string> members = new List<string>() { "Benny", "Dennis", "Emil", "Fredrik", "Håkan", "Josefine", "Mattias", "Nicklas", "Tina", "Tobias" };
+            List<string> members = new List<string>() { "Benny", " Dennis", " Emil", " Fredrik", " Håkan", " Josefine", " Mattias", " Nicklas", " Tina", " Tobias" };
 
             Console.ForegroundColor = ConsoleColor.Blue;
             string secretCode = "norrlänningarna"; 
@@ -46,7 +46,7 @@ namespace InlämningsUppgift2
                 loginCode = Console.ReadLine().ToLower();
                 if (loginCode != secretCode)
                 {
-                    ErrorMessage();
+                    ErrorMessage(); // B8 Rad 223
                 }
 
                 Console.Clear();
@@ -59,12 +59,12 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // StartMenu och menyvalen loopar om användaren skriver fel ("TryParse"). I menyval 1 och 2 kan "b" användas för att backa.
+        // B4. Menyvalen loopar om användaren skriver fel ("TryParse"). Inuti metoderna i case 1 och 2 kan "b" användas för att backa.
         //--------------------------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------------------------
         // Menyn har 4 olika alternativ. Beroende vilkent alternativ som väljs anropas en specifik metod. 
         //--------------------------------------------------------------------------------------------------------------------------
-        static void StartMenu()
+        private static void StartMenu()
         {
             bool keepMenuGo = true;
             string menuChoiceString;
@@ -82,7 +82,7 @@ namespace InlämningsUppgift2
 
                 if (!int.TryParse(menuChoiceString, out int menuChoiceInt) || menuChoiceInt < 1 || menuChoiceInt > 4)
                 {
-                    ErrorMessage();
+                    ErrorMessage(); // B8. Rad 223
                 }
 
                 Console.Clear();
@@ -90,16 +90,16 @@ namespace InlämningsUppgift2
                 switch (menuChoiceString)
                 {
                     case "1":
-                        MembersMenu(memberList); 
+                        MembersMenu(groupMemberList); // B5. Rad 115
                         break;
                     case "2":
-                        DeleteMember(); 
+                        DeleteMember(); // B6. Rad 154
                         break;
                     case "3":
-                        PrintAllMembers(); 
+                        PrintAllMembers(); // B7. Rad 192
                         break;
                     case "4":
-                        Exit(); 
+                        Exit(); // B8. Rad 211
                         break;
 
                 }
@@ -113,34 +113,34 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // En numrerad lista med namn skrivs ut. Beroenda på vilken siffra som välj skrivs specific information om den personen ut.
+        // B5. En numrerad lista med namn skrivs ut. Beroenda på vilken siffra som väljs skrivs specific information om den personen ut.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void MembersMenu(List<GroupMember> memberList)
+        private static void MembersMenu(List<GroupMember> groupMemberList)
         {
             bool keepShowing = true;
             string memberChoiceString;
 
             do
             {
-                PrintNumberdListWithName(memberList); 
+                PrintNumberdListWithName(groupMemberList); // B10. Rad 237
 
                 Console.WriteLine("\nVälj person för att visa specifik information (eller b för att backa)"); 
                 Console.Write("Välj: ");
                 memberChoiceString = Console.ReadLine();
-                
+
                 Console.Clear();
 
                 if (memberChoiceString == "b")
                 {
                     keepShowing = false;
                 }
-                else if (int.TryParse(memberChoiceString, out int memberChoiceInt) == true && memberChoiceInt <= memberList.Count)
+                else if (int.TryParse(memberChoiceString, out int memberChoiceInt) == true && memberChoiceInt <= groupMemberList.Count)
                 {
-                    ShowInfoOfSpecificMember(memberChoiceInt - 1);
+                    ShowInfoOfSpecificMember(memberChoiceInt - 1); // B11. Rad 253
                 }
-                else if (!int.TryParse(memberChoiceString, out memberChoiceInt) || memberChoiceInt < 1 || memberChoiceInt > memberList.Count)
+                else if (!int.TryParse(memberChoiceString, out memberChoiceInt) || memberChoiceInt < 1 || memberChoiceInt > groupMemberList.Count)
                 {
-                    ErrorMessage();
+                    ErrorMessage(); // B8. Rad 223
                 }
 
                 Console.Clear();
@@ -152,16 +152,16 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Tar bort en person från listan memberList och listan uppdateras i alla menyval.
+        // B6. En numrerad lista skrivs ut och användaren kan ta bort en person från groupMemberList och listan uppdateras då i alla menyvalen.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void DeleteMember()
+        private static void DeleteMember()
         {
             bool keepDeleting = true;
             string deleteMemberString;
 
             do
             {
-                PrintNumberdListWithName(memberList);
+                PrintNumberdListWithName(groupMemberList); // B10. Rad 237 
 
                 Console.WriteLine();
                 Console.WriteLine("Välj person för att ta bort den personen från listan (eller b för att backa)");
@@ -172,13 +172,13 @@ namespace InlämningsUppgift2
                 {
                     keepDeleting = false;
                 }
-                else if (int.TryParse(deleteMemberString, out int deleteMemberInt) == true && deleteMemberInt <= memberList.Count)
+                else if (int.TryParse(deleteMemberString, out int deleteMemberInt) == true && deleteMemberInt <= groupMemberList.Count)
                 {
-                    memberList.RemoveAt(deleteMemberInt - 1);
+                    groupMemberList.RemoveAt(deleteMemberInt - 1);
                 }
-                else if (!int.TryParse(deleteMemberString, out deleteMemberInt) || deleteMemberInt < 1 || deleteMemberInt > memberList.Count)
+                else if (!int.TryParse(deleteMemberString, out deleteMemberInt) || deleteMemberInt < 1 || deleteMemberInt > groupMemberList.Count)
                 {
-                    ErrorMessage();
+                    ErrorMessage(); // B8. Rad 223
                 }
 
                 Console.Clear();
@@ -190,30 +190,30 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Skriver ut all information om varje person samtidgt.
+        // B7. Skriver ut all information om varje person samtidgt när metoden kallas på.
         //--------------------------------------------------------------------------------------------------------------------------
-        public static List<GroupMember> PrintAllMembers()
+        private static List<GroupMember> PrintAllMembers()
         {
-            foreach (var member in memberList)
+            foreach (var member in groupMemberList)
             {
-                PrintMemberInfo(member);
+                PrintMemberInfo(member); // B12. Rad 265
                 Console.WriteLine("\n\n\n");
             }
 
             Console.ReadLine();
 
-            return memberList;
+            return groupMemberList;
         }
 
 
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Stänger ner programmet.
+        // B8. Stänger ner programmet vid metodanrop.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void Exit()
+        private static void Exit()
         {
-            Console.WriteLine("Tack för att du använt mitt program");
+            Console.Write("Tack för att du använt mitt program!");
             Environment.Exit(0);
         }
 
@@ -221,7 +221,7 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Skriver ut ett rött felmeddelnade vid nmetodanrop.
+        // B9. Skriver ut ett rött felmeddelnade vid metodanrop.
         //--------------------------------------------------------------------------------------------------------------------------
         private static void ErrorMessage() 
         {
@@ -235,12 +235,12 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Skriver ut en numrerad lista av objektens namn från memberList.
+        // B10. Skriver ut en numrerad lista av objektens .Name från groupMember vid metodanrop.
         //--------------------------------------------------------------------------------------------------------------------------
-        private static void PrintNumberdListWithName(List<GroupMember> memberList)
+        private static void PrintNumberdListWithName(List<GroupMember> groupMemberList)
         {
             int i = 1;
-            foreach (var groupMember in memberList) 
+            foreach (var groupMember in groupMemberList) 
             {
                 Console.WriteLine($"{i}. {groupMember.Name}");
                 i++;
@@ -251,22 +251,21 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Beroende på vilken person(siffra) användaren väljer i MembersMenu skrivs information om den personen ut när metoden anropas.
+        // B11. Beroende på vilken person(siffra) användaren väljer i MembersMenu skrivs information om den personen ut när metoden anropas.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void ShowInfoOfSpecificMember(int memberChoiceInt)
+        private static void ShowInfoOfSpecificMember(int memberChoiceInt)
         {
-            PrintMemberInfo(memberList[memberChoiceInt]);
+            PrintMemberInfo(groupMemberList[memberChoiceInt]); // B12. Rad 265
             Console.ReadLine();
         }
-       
 
 
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // En mall över hur information om personerna skrivs ut med färgmönster när metodanrop av denna metod sker.
+        // B12. En mall över hur information om personerna skrivs ut med färgmönster när metodanrop av denna metod sker.
         //--------------------------------------------------------------------------------------------------------------------------
-        public static void PrintMemberInfo(GroupMember groupMember)
+        private static void PrintMemberInfo(GroupMember groupMember)
         {
             Console.Write("Fullständigt namn: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
