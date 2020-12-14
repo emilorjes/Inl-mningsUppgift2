@@ -127,50 +127,20 @@ namespace InlämningsUppgift2
                 Console.WriteLine("\nVälj person för att visa specifik information (eller b för att backa)"); 
                 Console.Write("Välj: ");
                 memberChoiceString = Console.ReadLine();
+                
+                Console.Clear();
 
                 if (memberChoiceString == "b")
                 {
                     keepShowing = false;
                 }
-                else if (!int.TryParse(memberChoiceString, out int memberChoiceInt) || memberChoiceInt < 1 || memberChoiceInt > memberList.Count)
+                else if (int.TryParse(memberChoiceString, out int memberChoiceInt) == true && memberChoiceInt <= memberList.Count)
+                {
+                    ShowInfoOfSpecificMember(memberChoiceInt - 1);
+                }
+                else if (!int.TryParse(memberChoiceString, out memberChoiceInt) || memberChoiceInt < 1 || memberChoiceInt > memberList.Count)
                 {
                     ErrorMessage();
-                }
-
-                Console.Clear();
-
-                switch (memberChoiceString)
-                {
-                    case "1":
-                        ShowIndexZeroOfMemberList(); 
-                        break;
-                    case "2":
-                        ShowIndexOneOfMemberList();
-                        break;
-                    case "3":
-                        ShowIndexTwoOfMemberList();
-                        break;
-                    case "4":
-                        ShowIndexThreeOfMemberList();
-                        break;
-                    case "5":
-                        ShowIndexFourOfMemberList();
-                        break;
-                    case "6":
-                        ShowIndexFiveOfMemberList();
-                        break;
-                    case "7":
-                        ShowIndexSixfMemberList();
-                        break;
-                    case "8":
-                        ShowIndexSevenOfMemberList();
-                        break;
-                    case "9":
-                        ShowIndexEightOfMemberList();
-                        break;
-                    case "10":
-                        ShowIndexNineOfMemberList();
-                        break;
                 }
 
                 Console.Clear();
@@ -281,58 +251,14 @@ namespace InlämningsUppgift2
 
 
         //--------------------------------------------------------------------------------------------------------------------------
-        // Beroende på vilken person som ligger på specifikt index skrivs information om den personen ut när metoden anropas.
+        // Beroende på vilken person(siffra) användaren väljer i MembersMenu skrivs information om den personen ut när metoden anropas.
         //--------------------------------------------------------------------------------------------------------------------------
-        static void ShowIndexZeroOfMemberList()
+        static void ShowInfoOfSpecificMember(int memberChoiceInt)
         {
-            PrintMemberInfo(memberList[0]);
+            PrintMemberInfo(memberList[memberChoiceInt]);
             Console.ReadLine();
         }
-        static void ShowIndexOneOfMemberList()
-        {
-            PrintMemberInfo(memberList[1]);
-            Console.ReadLine();
-        }
-        static void ShowIndexTwoOfMemberList()
-        {
-            PrintMemberInfo(memberList[2]);
-            Console.ReadLine();
-        }
-        static void ShowIndexThreeOfMemberList()
-        {
-            PrintMemberInfo(memberList[3]);
-            Console.ReadLine();
-        }
-        static void ShowIndexFourOfMemberList()
-        {
-            PrintMemberInfo(memberList[4]);
-            Console.ReadLine();
-        }
-        static void ShowIndexFiveOfMemberList()
-        {
-            PrintMemberInfo(memberList[5]);
-            Console.ReadLine();
-        }
-        static void ShowIndexSixfMemberList()
-        {
-            PrintMemberInfo(memberList[6]);
-            Console.ReadLine();
-        }
-        static void ShowIndexSevenOfMemberList()
-        {
-            PrintMemberInfo(memberList[7]);
-            Console.ReadLine();
-        }
-        static void ShowIndexEightOfMemberList()
-        {
-            PrintMemberInfo(memberList[8]);
-            Console.ReadLine();
-        }
-        static void ShowIndexNineOfMemberList()
-        {
-            PrintMemberInfo(memberList[9]);
-            Console.ReadLine();
-        }
+       
 
 
 
