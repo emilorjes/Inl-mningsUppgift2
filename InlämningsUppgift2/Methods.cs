@@ -34,7 +34,7 @@ namespace InlämningsUppgift2
             List<string> members = new List<string>() { "Benny", " Dennis", " Emil", " Fredrik", " Håkan", " Josefine", " Mattias", " Nicklas", " Tina", " Tobias" };
 
             Console.ForegroundColor = ConsoleColor.Blue;
-            string secretCode = "norrlänningarna"; 
+            string secretCode = "norrlänningarna";
             string loginCode;
             Console.WriteLine("Välkommen till persondatatbas över basgruppen som jag är med i!\n");
             Console.WriteLine($"Medlemmar i basgruppen: {string.Join(',', members)}\n");
@@ -69,7 +69,7 @@ namespace InlämningsUppgift2
             bool keepMenuGo = true;
             string menuChoiceString;
 
-            Console.WriteLine("Snyggt rätt kod!\n"); 
+            Console.WriteLine("Snyggt rätt kod!\n");
 
             do
             {
@@ -82,7 +82,7 @@ namespace InlämningsUppgift2
 
                 if (!int.TryParse(menuChoiceString, out int menuChoiceInt) || menuChoiceInt < 1 || menuChoiceInt > 4)
                 {
-                    ErrorMessage(); // B8. Rad 223
+                    ErrorMessage(); // B9. Rad 223
                 }
 
                 Console.Clear();
@@ -124,7 +124,7 @@ namespace InlämningsUppgift2
             {
                 PrintNumberdListWithName(groupMemberList); // B10. Rad 237
 
-                Console.WriteLine("\nVälj person för att visa specifik information (eller b för att backa)"); 
+                Console.WriteLine("\nVälj person för att visa specifik information (eller b för att backa)");
                 Console.Write("Välj: ");
                 memberChoiceString = Console.ReadLine();
 
@@ -140,7 +140,7 @@ namespace InlämningsUppgift2
                 }
                 else if (!int.TryParse(memberChoiceString, out memberChoiceInt) || memberChoiceInt < 1 || memberChoiceInt > groupMemberList.Count)
                 {
-                    ErrorMessage(); // B8. Rad 223
+                    ErrorMessage(); // B9. Rad 223
                 }
 
                 Console.Clear();
@@ -178,7 +178,7 @@ namespace InlämningsUppgift2
                 }
                 else if (!int.TryParse(deleteMemberString, out deleteMemberInt) || deleteMemberInt < 1 || deleteMemberInt > groupMemberList.Count)
                 {
-                    ErrorMessage(); // B8. Rad 223
+                    ErrorMessage(); // B9. Rad 223
                 }
 
                 Console.Clear();
@@ -223,10 +223,10 @@ namespace InlämningsUppgift2
         //--------------------------------------------------------------------------------------------------------------------------
         // B9. Skriver ut ett rött felmeddelnade vid metodanrop.
         //--------------------------------------------------------------------------------------------------------------------------
-        private static void ErrorMessage() 
+        private static void ErrorMessage()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Fel inmatning, försök igen"); 
+            Console.WriteLine("Fel inmatning, försök igen");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.ReadLine();
         }
@@ -240,7 +240,7 @@ namespace InlämningsUppgift2
         private static void PrintNumberdListWithName(List<GroupMember> groupMemberList)
         {
             int i = 1;
-            foreach (var groupMember in groupMemberList) 
+            foreach (var groupMember in groupMemberList)
             {
                 Console.WriteLine($"{i}. {groupMember.Name}");
                 i++;
